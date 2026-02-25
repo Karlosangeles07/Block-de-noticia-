@@ -1,0 +1,267 @@
+:root{
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+
+  --dark: #0f172a;
+  --border: #e5e7eb;
+
+  --shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header{
+  background: var(--dark);
+  color: #fff;
+}
+
+.header-wrap{
+  padding: 22px 16px 10px;
+  text-align: center;
+}
+
+header h1{
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: .4px;
+}
+
+header h2{
+  margin: 8px 0 0;
+  font-weight: 400;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+}
+
+.menu ul{
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: rgba(255,255,255,0.06);
+}
+
+.menu a{
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background .2s ease, transform .05s ease;
+}
+
+.menu a:hover{
+  background: rgba(255,255,255,0.14);
+}
+
+.menu a:active{
+  transform: scale(0.98);
+}
+
+/* LAYOUT */
+.container{
+  width: 92%;
+  max-width: 1200px;
+  margin: 22px auto;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.news{ flex: 3; }
+.sidebar{ flex: 1; }
+
+/* CARDS */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  gap: 0;
+}
+
+.card-media{
+  width: 38%;
+  min-height: 220px;
+  background: #eef2ff;
+}
+
+.card-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content{
+  padding: 18px 18px 16px;
+  width: 62%;
+}
+
+.card h3{
+  margin: 10px 0 10px;
+  color: var(--primary);
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.card p{
+  margin: 0 0 10px;
+  line-height: 1.7;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.meta{
+  color: var(--muted);
+  font-size: .92rem;
+  margin-top: 6px;
+}
+
+.author{
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tag{
+  display: inline-block;
+  font-size: .78rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  border: 1px solid #e0e7ff;
+}
+
+.tag-featured{
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #9a3412;
+}
+
+.featured{
+  border: 2px solid #fde68a;
+}
+
+.featured h3{
+  font-size: 1.6rem;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background .2s ease;
+}
+
+.btn:hover{
+  background: var(--primary-dark);
+}
+
+/* SEPARADORES */
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 18px 0;
+}
+
+/* SIDEBAR */
+.sidebar{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.sidebar h3{
+  margin: 0 0 12px;
+  color: var(--primary);
+}
+
+.categories{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories li{
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.categories li:last-child{
+  border-bottom: none;
+}
+
+.box{
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px dashed #cbd5e1;
+  background: #f8fafc;
+}
+
+.box h4{
+  margin: 0 0 8px;
+}
+
+footer{
+  background: var(--dark);
+  color: #e5e7eb;
+  text-align: center;
+  padding: 18px 12px;
+  margin-top: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+  .container{ flex-direction: column; }
+  .card{ flex-direction: column; }
+  .card-media, .card-content{ width: 100%; }
+  .card-media{ min-height: 220px; }
+}
+
+@media (max-width: 520px){
+  header h1{ font-size: 1.9rem; }
+  header h2{ font-size: 1rem; }
+  .menu a{ padding: 9px 12px; }
+}
+
+/* Header con logo al lado */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+/* Tamaño del logo */
+.logo {
+  width: 200px;   /* puedes cambiar a 60px o 100px */
+  height: auto;
+}
